@@ -10,15 +10,15 @@ Geoloc plugin allows to select a location using GoogleMaps (for Android) or Plan
 
 ## selectLocation
 
-Use the 'cobalt.geolocPicker.selectLocation shortcut like this
+Use the `cobalt.geolocPicker()` method like this
 
 
 ```
-cobalt.geolocPicker.selectLocation({
+cobalt.geolocPicker({
     location: "48.758405, -3.470589", 
-    address: "Kristal, 3 Rue Fulgence Bienvenue, 22300 Lannion"},
-    function(data){
-        cobalt.log('status', data.status, data);
+    address: "Kristal, 3 Rue Fulgence Bienvenue, 22300 Lannion"
+  }, function(data){
+    cobalt.log('status', data.status, data);
 });
 ```
 
