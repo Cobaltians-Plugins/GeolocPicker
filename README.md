@@ -8,7 +8,7 @@ Geoloc plugin allows to select a location using GoogleMaps (for Android) or Plan
 * Add the cobalt.geolocpicker.js to your web JS folder
 * Add an html link to the cobalt.geolocpicker.js plugin script after the cobalt link in the HEAD tag
 
-## selectLocation
+## cobalt.geolocPicker
 
 Use the `cobalt.geolocPicker()` method like this
 
