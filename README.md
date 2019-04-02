@@ -18,7 +18,7 @@ cobalt.geolocPicker({
     location: "48.758405, -3.470589", 
     address: "Kristal, 3 Rue Fulgence Bienvenue, 22300 Lannion"
   }, function(data){
-    cobalt.log('status', data.status, data);
+    cobalt.log('location changed to', data);
 });
 ```
 
