@@ -22,13 +22,24 @@ cobalt.geolocPicker({
 });
 ```
 
-Here is what the native side is doing next :
+Here is the detail of data sent by the web :
 
-- If no location is selected: Maps is displayed on default location, with Instructions label on "How to select a location". User can long press on map to add a Marker, Instruction label disappears, and current address and Clear button are displayed.
-- If a location is selected: Maps is displayed centered on location's coordinates with a Marker on it, with Address label and Clear button. User can long press on map to change Marker location, address in label is also changed.
-- Clicking on "Clear" button remove Maps Marker, remove address and clear button, and display Instructions label.
-- Clicking on "Save", close `MapActivity` and send callback to web with Marker's `location` and `address` into the `data` object.
+location : (string) The coordinates "latitude, longitude" of current location (it can be null).
+address : (string) The address related to current location (it can be null).
 
+If `location` is null, maps opens without Marker, on a default location, with instructions on bottom of the screen.
+If `location` has a valid value, maps opens zoomed on Marked location, with related address on bottom of the screen.
+
+User can long-press the map to select a new location :
+- Marker is displayed on new location
+- Address is displayed on the bottom of the screen.
+
+Pressing `Clear` button, next to address, unselect the location:
+- Marker is removed
+- Address is removed (displaying default instructions)
+
+Pressing `Save` button send callback to web with selected location's `location` and `address` into the `data` object.
+If there's no selected location, callback send an empty data object, and location is changed to "Empty".
 
 ```
 { 
@@ -36,3 +47,4 @@ Here is what the native side is doing next :
     address: "Kristal, 3 Rue Fulgence Bienvenue, 22300 Lannion"
 }
 ```
+Pressing `Back` button close Maps with no change to the web.
