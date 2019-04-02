@@ -24,22 +24,22 @@ cobalt.geolocPicker({
 
 Here is the detail of data sent by the web :
 
-location : (string) The coordinates "latitude, longitude" of current location (it can be null).
-address : (string) The address related to current location (it can be null).
+- `location` : (optional, string) The coordinates "latitude, longitude" of current location.
+- `address` : (optional, string) The address related to current location.
 
-If `location` is null, maps opens without Marker, on a default location, with instructions on bottom of the screen.
-If `location` has a valid value, maps opens zoomed on Marked location, with related address on bottom of the screen.
+If `location` is null, the map opens without marker, on a default location, with instructions on bottom of the screen.
+
+If `location` has a valid value, the map opens, zoomed on marker location, with related address on bottom of the screen.
 
 User can long-press the map to select a new location :
-- Marker is displayed on new location
-- Address is displayed on the bottom of the screen.
+- marker is displayed on new location
+- address is displayed on the bottom of the screen.
 
 Pressing `Clear` button, next to address, unselect the location:
-- Marker is removed
-- Address is removed (displaying default instructions)
+- marker is removed
+- address is removed (displaying default instructions)
 
-Pressing `Save` button send callback to web with selected location's `location` and `address` into the `data` object.
-If there's no selected location, callback send an empty data object, and location is changed to "Empty".
+Pressing `Save` button sends callback to web with selected location's `location` and `address` into the `data` object.
 
 ```
 { 
@@ -47,4 +47,7 @@ If there's no selected location, callback send an empty data object, and locatio
     address: "Kristal, 3 Rue Fulgence Bienvenue, 22300 Lannion"
 }
 ```
-Pressing `Back` button close Maps with no change to the web.
+
+If there's no selected location, callback sends an empty data object.
+
+Pressing `Back` button closes the map and does not send anything to the web.
