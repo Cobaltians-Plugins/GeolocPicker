@@ -25,11 +25,9 @@ cobalt.geolocPicker({
 Here is the detail of data sent by the web :
 
 - `location` : (optional, string) The coordinates "latitude, longitude" of current location.
+  - If `location` is null, the map opens without marker, on a default location, with instructions on bottom of the screen.
+  - If `location` has a valid value, the map opens, zoomed on marker location, with related address on bottom of the screen.
 - `address` : (optional, string) The address related to current location.
-
-If `location` is null, the map opens without marker, on a default location, with instructions on bottom of the screen.
-
-If `location` has a valid value, the map opens, zoomed on marker location, with related address on bottom of the screen.
 
 User can long-press the map to select a new location :
 - marker is displayed on new location
