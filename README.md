@@ -27,7 +27,7 @@ Here is what the native side is doing next :
 - If no location is selected: Maps is displayed on default location, with Instructions label on "How to select a location". User can long press on map to add a Marker, Instruction label disappears, and current address and Clear button are displayed.
 - If a location is selected: Maps is displayed centered on location's coordinates with a Marker on it, with Address label and Clear button. User can long press on map to change Marker location, address in label is also changed.
 - Clicking on "Clear" button remove Maps Marker, remove address and clear button, and display Instructions label.
-- Clicking on "Save", close `MapActivity` and send callback to web with Marker's `location` and `address`.
+- Clicking on "Save", close `MapActivity` and send callback to web with Marker's `location` and `address` into the `data` object.
 
 
 ```
