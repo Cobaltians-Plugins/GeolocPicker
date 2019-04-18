@@ -7,6 +7,19 @@ Geoloc plugin allows to select a location using GoogleMaps (for Android) or Plan
 * import the plugin to your project as explained [here](https://github.com/cobaltians/cobalt/wiki/Plugins-usage)
 * Add the cobalt.geolocpicker.js to your web JS folder
 * Add an html link to the cobalt.geolocpicker.js plugin script after the cobalt link in the HEAD tag
+* For Android : add those lines to your fragment's onActivityResult:
+
+```
+@Override
+public void onActivityResult(int requestCode, int resultCode, Intent data)
+{
+	// Forward result to GeolocPicker
+	GeolocPicker geolocPicker = (GeolocPicker) GeolocPicker.getInstance(new CobaltPluginWebContainer(getActivity(), this));
+	geolocPicker.onActivityResult(requestCode, resultCode, data);
+
+	super.onActivityResult(requestCode, resultCode, data);
+}
+```
 
 ## cobalt.geolocPicker
 
